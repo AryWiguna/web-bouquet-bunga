@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beautiful animated flower bouquet with realistic blooming animation">
+    <title>🌸 Bouquet Bunga — For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="not-loaded">
+    <!-- Fireflies Canvas Background -->
+    <canvas id="fireflies-canvas"></canvas>
+
+    <!-- Main Scene -->
+    <div class="bouquet-scene" id="bouquet-scene">
+        
+        <!-- ===== GREETING MESSAGE ===== -->
+        <!-- Dipindah ke atas agar z-index text bisa tetap tinggi tanpa tertutup bunga -->
+        <div class="message-section" id="message-section">
+            <p class="message-pre">Specially made</p>
+            <h1 class="message-title">For You 💐</h1>
+            <p class="message-sub">Semoga kamu suka </p>
+        </div>
+
+        <div class="bouquet" id="bouquet">
+            
+            <!-- ===== FLOWERS CONTAINER ===== -->
+            <div class="flowers-container" id="flowers-container">
+
+                
+                <div class="flower sunflower" style="--x: 50%; --y: 5%; --r: 0deg; --s: 1; --h: 24em; --d: 1s; --z: 15;">
+                    <div class="flower__sway sway--1">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"><div class="center-inner"></div></div><div class="flower__light flower__light--1"></div><div class="flower__light flower__light--2"></div><div class="flower__light flower__light--3"></div><div class="flower__light flower__light--4"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower sunflower" style="--x: 55%; --y: 6%; --r: 15deg; --s: 0.85; --h: 22em; --d: 1.5s; --z: 14;">
+                    <div class="flower__sway sway--2">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"><div class="center-inner"></div></div><div class="flower__light flower__light--5"></div><div class="flower__light flower__light--6"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower sunflower" style="--x: 45%; --y: 6%; --r: -15deg; --s: 0.85; --h: 23em; --d: 1.8s; --z: 13;">
+                    <div class="flower__sway sway--3">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"><div class="center-inner"></div></div><div class="flower__light flower__light--7"></div><div class="flower__light flower__light--8"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower tulip tulip-pink" style="--x: 48%; --y: 8%; --r: -5deg; --s: 0.8; --h: 18em; --d: 1.2s; --z: 12;">
+                    <div class="flower__sway sway--1">
+                        <div class="flower__leafs">
+                            <div class="petal petal-left"></div><div class="petal petal-center"></div><div class="petal petal-right"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="tulip-leaf-l"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower tulip tulip-red" style="--x: 58%; --y: 10%; --r: 25deg; --s: 0.8; --h: 17em; --d: 2.1s; --z: 11;">
+                    <div class="flower__sway sway--2">
+                        <div class="flower__leafs">
+                            <div class="petal petal-left"></div><div class="petal petal-center"></div><div class="petal petal-right"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower tulip tulip-pink" style="--x: 42%; --y: 10%; --r: -25deg; --s: 0.75; --h: 16em; --d: 2.4s; --z: 10;">
+                    <div class="flower__sway sway--3">
+                        <div class="flower__leafs">
+                            <div class="petal petal-left"></div><div class="petal petal-center"></div><div class="petal petal-right"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="tulip-leaf-l"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower tulip tulip-red" style="--x: 52%; --y: 12%; --r: 8deg; --s: 0.85; --h: 19em; --d: 1.7s; --z: 16;">
+                    <div class="flower__sway sway--1">
+                        <div class="flower__leafs">
+                            <div class="petal petal-left"></div><div class="petal petal-center"></div><div class="petal petal-right"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower daisy" style="--x: 40%; --y: 12%; --r: -35deg; --s: 0.7; --h: 15em; --d: 1.6s; --z: 9;">
+                    <div class="flower__sway sway--2">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--4"></div><div class="flower__line__leaf flower__line__leaf--2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower daisy" style="--x: 60%; --y: 12%; --r: 35deg; --s: 0.7; --h: 14em; --d: 2.3s; --z: 8;">
+                    <div class="flower__sway sway--3">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower daisy" style="--x: 46%; --y: 8%; --r: -10deg; --s: 0.75; --h: 17em; --d: 2.6s; --z: 17;">
+                    <div class="flower__sway sway--1">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower daisy" style="--x: 54%; --y: 8%; --r: 10deg; --s: 0.75; --h: 16em; --d: 1.4s; --z: 18;">
+                    <div class="flower__sway sway--2">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower daisy" style="--x: 50%; --y: 20%; --r: 0deg; --s: 0.8; --h: 12em; --d: 2.8s; --z: 19;">
+                    <div class="flower__sway sway--3">
+                        <div class="flower__leafs">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower orchid" style="--x: 43%; --y: 10%; --r: -20deg; --s: 0.8; --h: 14em; --d: 1.9s; --z: 20;">
+                    <div class="flower__sway sway--1">
+                        <div class="flower__leafs">
+                            <div class="sepal sepal-top"></div><div class="sepal sepal-left"></div><div class="sepal sepal-right"></div><div class="inner-petal inner-left"></div><div class="inner-petal inner-right"></div><div class="lip"></div><div class="column"></div><div class="flower__light flower__light--1"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower orchid" style="--x: 57%; --y: 10%; --r: 20deg; --s: 0.8; --h: 13em; --d: 2.5s; --z: 21;">
+                    <div class="flower__sway sway--2">
+                        <div class="flower__leafs">
+                            <div class="sepal sepal-top"></div><div class="sepal sepal-left"></div><div class="sepal sepal-right"></div><div class="inner-petal inner-left"></div><div class="inner-petal inner-right"></div><div class="lip"></div><div class="column"></div><div class="flower__light flower__light--2"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower orchid" style="--x: 50%; --y: 15%; --r: 5deg; --s: 0.75; --h: 15em; --d: 2.9s; --z: 22;">
+                    <div class="flower__sway sway--3">
+                        <div class="flower__leafs">
+                            <div class="sepal sepal-top"></div><div class="sepal sepal-left"></div><div class="sepal sepal-right"></div><div class="inner-petal inner-left"></div><div class="inner-petal inner-right"></div><div class="lip"></div><div class="column"></div><div class="flower__light flower__light--3"></div>
+                        </div>
+                        <div class="flower__line">
+                            <div class="flower__line__leaf flower__line__leaf--5"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- GRASS/LEAVES (Inspired by github ref) -->
+                <div class="long-g long-g--1">
+                    <div class="grow-ans" style="--d:2s">
+                        <div class="leaf leaf--0"></div>
+                    </div>
+                    <div class="grow-ans" style="--d:2.2s">
+                        <div class="leaf leaf--1"></div>
+                    </div>
+                </div>
+
+                <div class="long-g long-g--2">
+                    <div class="grow-ans" style="--d:2.4s">
+                        <div class="leaf leaf--0"></div>
+                    </div>
+                    <div class="grow-ans" style="--d:2.6s">
+                        <div class="leaf leaf--1"></div>
+                    </div>
+                </div>
+
+                <div class="long-g long-g--3">
+                    <div class="grow-ans" style="--d:2.8s">
+                        <div class="leaf leaf--0"></div>
+                    </div>
+                </div>
+                
+                <div class="long-g long-g--4">
+                    <div class="grow-ans" style="--d:2.5s">
+                        <div class="leaf leaf--0"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END FLOWERS CONTAINER -->
+
+            <!-- ===== BOUQUET WRAPPER (Kraft Paper) ===== -->
+            <div class="wrapper" id="wrapper">
+                <div class="wrapper-texture"></div>
+                <div class="wrapper-fold"></div>
+                <div class="wrapper-shadow"></div>
+            </div>
+
+            <!-- ===== RIBBON BOW ===== -->
+            <div class="ribbon" id="ribbon">
+                <div class="ribbon-loop ribbon-loop-left"></div>
+                <div class="ribbon-loop ribbon-loop-right"></div>
+                <div class="ribbon-knot"></div>
+                <div class="ribbon-tail ribbon-tail-left"></div>
+                <div class="ribbon-tail ribbon-tail-right"></div>
+            </div>
+
+        </div>
+        <!-- END BOUQUET -->
+    </div>
+    <!-- END SCENE -->
+
+    <!-- Container for falling petals (generated by JS) -->
+    <div class="falling-petals" id="falling-petals"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
