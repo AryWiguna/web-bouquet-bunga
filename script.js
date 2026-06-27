@@ -172,6 +172,40 @@
             }, 6000); // 6s wait to let flowers finish blooming
 
         }, 500);
+
+        // Musik latar
+    const music = document.getElementById('background-music');
+    
+    // Fungsi untuk memutar musik
+    function playMusic() {
+        music.play().catch(error => console.log("Autoplay dicegah oleh browser"));
+        // Hapus listener setelah diklik agar tidak menumpuk
+        document.removeEventListener('click', playMusic);
+    }
+
+    // Tunggu interaksi user (klik di mana saja) untuk mulai musik
+    document.addEventListener(playMusic);
     };
+
+    /* ===========================================
+   MUSIC AUTO-TRIGGER ON FIRST INTERACTION
+   =========================================== */
+const music = document.getElementById('background-music');
+
+function startAudio() {
+    // Memutar musik
+    music.play().then(() => {
+        console.log("Musik berhasil diputar!");
+        // Setelah musik berhasil diputar, hapus event listener agar tidak terpicu terus
+        document.removeEventListener('click', startAudio);
+        document.removeEventListener('touchstart', startAudio);
+    }).catch(error => {
+        console.log("Menunggu interaksi pengguna...");
+    });
+}
+
+// Menambahkan listener untuk klik atau sentuhan layar (mobile friendly)
+document.addEventListener('click', startAudio);
+document.addEventListener('touchstart', startAudio);
 
 })();
