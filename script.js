@@ -150,64 +150,42 @@
     });
 
 
-    /* ==========================================
-       ANIMATION TRIGGER
+/* ==========================================
+       ANIMATION TRIGGER & MUSIC (UNIFIED)
        ========================================== */
-    window.onload = () => {
-        // Remove not-loaded class to trigger CSS animations (like the github reference)
-        setTimeout(() => {
-            document.body.classList.remove("not-loaded");
-            
-            // Show wrapper, ribbon, and message manually based on overall animation timing
-            setTimeout(() => {
-                document.getElementById('wrapper').classList.add('visible');
-            }, 300);
-
-            setTimeout(() => {
-                document.getElementById('ribbon').classList.add('visible');
-            }, 800);
-            
-            setTimeout(() => {
-                document.getElementById('message-section').classList.add('visible');
-            }, 6000); // 6s wait to let flowers finish blooming
-
-        }, 500);
-
-        // Musik latar
-    const music = document.getElementById('background-music');
-    
-    // Fungsi untuk memutar musik
-    function playMusic() {
-        music.play().catch(error => console.log("Autoplay dicegah oleh browser"));
-        // Hapus listener setelah diklik agar tidak menumpuk
-        document.removeEventListener('click', playMusic);
-    }
-
-    // Tunggu interaksi user (klik di mana saja) untuk mulai musik
-    document.addEventListener('click', playMusic);
-
-    if (localStorage.getItem('musicAllowed') === 'true') {
-        music.play().catch(() => {
-            console.log("Browser tetap memblokir autoplay setelah refresh.");
-        });
-    }
-    };
     const splash = document.getElementById('splash-screen');
-const music = document.getElementById('background-music');
+    const music = document.getElementById('background-music');
 
-function startExperience() {
-    // 1. Mainkan musik
-    music.play();
-    
-    // 2. Hilangkan layar splash
-    splash.style.display = 'none';
-    
-    // 3. Tampilkan bouquet (jika kamu menyembunyikannya)
-    // document.body.classList.remove("not-loaded"); 
-    
-    document.removeEventListener('click', startExperience);
-}
+    function startExperience() {
+        // 1. Mainkan musik
+        music.play().catch(e => console.log("Musik butuh interaksi user"));
+        
+        // 2. Hilangkan layar splash
+        if (splash) splash.style.display = 'none';
+        
+        // 3. Mulai animasi (menghapus class not-loaded)
+        document.body.classList.remove("not-loaded");
 
-splash.addEventListener('click', startExperience);
+        // 4. Munculkan elemen tambahan dengan timing yang tepat
+        setTimeout(() => {
+            document.getElementById('wrapper').classList.add('visible');
+        }, 300);
+
+        setTimeout(() => {
+            document.getElementById('ribbon').classList.add('visible');
+        }, 800);
+        
+        setTimeout(() => {
+            document.getElementById('message-section').classList.add('visible');
+        }, 6000); // 6 detik sesuai durasi blooming
+
+        // Hapus listener agar tidak berjalan berulang kali
+        splash.removeEventListener('click', startExperience);
+    }
+
+    // Pasang satu-satunya pemicu (klik pada splash screen)
+    if (splash) {
+        splash.addEventListener('click', startExperience);
+    }
 
 })();
