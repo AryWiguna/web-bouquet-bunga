@@ -180,11 +180,11 @@
     function playMusic() {
         music.play().catch(error => console.log("Autoplay dicegah oleh browser"));
         // Hapus listener setelah diklik agar tidak menumpuk
-        document.removeEventListener(playMusic);
+        document.removeEventListener('click', playMusic);
     }
 
     // Tunggu interaksi user (klik di mana saja) untuk mulai musik
-    document.addEventListener(playMusic);
+    document.addEventListener('click', playMusic);
 
     if (localStorage.getItem('musicAllowed') === 'true') {
         music.play().catch(() => {
@@ -192,5 +192,22 @@
         });
     }
     };
+    const splash = document.getElementById('splash-screen');
+const music = document.getElementById('background-music');
+
+function startExperience() {
+    // 1. Mainkan musik
+    music.play();
+    
+    // 2. Hilangkan layar splash
+    splash.style.display = 'none';
+    
+    // 3. Tampilkan bouquet (jika kamu menyembunyikannya)
+    // document.body.classList.remove("not-loaded"); 
+    
+    document.removeEventListener('click', startExperience);
+}
+
+splash.addEventListener('click', startExperience);
 
 })();
